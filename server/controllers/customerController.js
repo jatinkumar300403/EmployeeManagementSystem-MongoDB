@@ -12,8 +12,8 @@ exports.homepage = async (req, res) => {
   const messages = await req.flash("info");
 
   const locals = {
-    title: "NodeJs",
-    description: "Free NodeJs User Management System",
+    title: "SyncEmployee",
+    description: "Employee Management System",
   };
 
   let perPage = 12;
