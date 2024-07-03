@@ -1,42 +1,19 @@
-# Nodejs User Management Express EJS MongoDB
+# User Management System
 
-## Udates
+## 
+- Project created using the following tech stack: -
+* Node.js
+* Express.js (Node.js Framework)
+* MongoDB (Database)
+* Embeddes JavaScript (.ejs - for frontend) 
 
-
-## You need:
-- Database (MongoDB) Free
-
-## Create .env file
-Create a .env file to store your credentials. Example below:
-
-```
-MONGODB_URI = mongodb+srv://<username>:<password>@mongodburlhere
-```
-
-## Installation
-To install and run this project - install dependencies using npm and then start your server:
-
-```
-$ npm install
-$ npm start
-```
+NOTE - Make sure to create a .env file and add the following details: -
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.fb9yjrr.mongodb.net/
 
 
+## How to start
 
+* npm i
+* npm start
 
-
-### YouTube Video & Article
-
-[YouTube Video](https://youtu.be/)
-
-[Read Article](https://raddy.dev/blog/)
-
-### YouTube Channel - Raddy
-
-[Subscribe to my YouTube Channel](https://www.youtube.com/channel/UCvXscyQ0cLzPZeNOeXI45Sw?sub_confirmation=1)
-
-### Website
-[www.raddy.dev](https://www.raddy.dev)
-
-### Donations
-[Buy me a Coffee](https://www.buymeacoffee.com/RaddyTheBrand)
+Created by - Jatin Kumar (22BCE2716)

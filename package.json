@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/clerk-js": "^5.7.2",
+    "@clerk/nextjs": "^5.1.6",
     "connect-flash": "^0.1.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -24,5 +26,3 @@
     "nodemon": "^2.0.21"
   }
 }
-
-

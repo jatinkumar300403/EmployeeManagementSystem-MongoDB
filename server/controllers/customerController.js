@@ -77,8 +77,8 @@ exports.about = async (req, res) => {
  */
 exports.addCustomer = async (req, res) => {
   const locals = {
-    title: "Add New Customer - NodeJs",
-    description: "Free NodeJs User Management System",
+    title: "SyncEmployee",
+    description: "Employee Management System",
   };
 
   res.render("customer/add", locals);
@@ -206,6 +206,8 @@ exports.searchCustomers = async (req, res) => {
       $or: [
         { firstName: { $regex: new RegExp(searchNoSpecialChar, "i") } },
         { lastName: { $regex: new RegExp(searchNoSpecialChar, "i") } },
+        { tel: { $regex: new RegExp(searchNoSpecialChar, "i") } },
+        { email: { $regex: new RegExp(searchNoSpecialChar, "i") } }
       ],
     });
 
