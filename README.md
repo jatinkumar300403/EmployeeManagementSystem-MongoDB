@@ -5,7 +5,7 @@
 * Node.js
 * Express.js (Node.js Framework)
 * MongoDB (Database)
-* Embeddes JavaScript (.ejs - for frontend) 
+* Embedded JavaScript (.ejs - for frontend) 
 
 NOTE - Make sure to create a .env file and add the following details: -
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.fb9yjrr.mongodb.net/
