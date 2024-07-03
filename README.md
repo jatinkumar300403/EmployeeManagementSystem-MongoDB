@@ -1,4 +1,4 @@
-# User Management System
+# Employee Management System
 
 ## 
 - Project created using the following tech stack: -
