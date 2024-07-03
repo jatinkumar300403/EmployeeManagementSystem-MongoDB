@@ -1,14 +1,6 @@
 const Customer = require("../models/Customer");
 const mongoose = require("mongoose");
-
-/**
- * GET /
- * Homepage
- */
 exports.homepage = async (req, res) => {
-  // Remove
-  // const messages = await req.consumeFlash('info');
-  // Use this instead
   const messages = await req.flash("info");
 
   const locals = {
@@ -24,8 +16,6 @@ exports.homepage = async (req, res) => {
       .skip(perPage * page - perPage)
       .limit(perPage)
       .exec();
-    // Count is deprecated. Use countDocuments({}) or estimatedDocumentCount()
-    // const count = await Customer.count();
     const count = await Customer.countDocuments({});
 
     res.render("index", {
@@ -39,29 +29,11 @@ exports.homepage = async (req, res) => {
     console.log(error);
   }
 };
-// exports.homepage = async (req, res) => {
-//     const messages = await req.consumeFlash('info');
-//     const locals = {
-//       title: 'NodeJs',
-//       description: 'Free NodeJs User Management System'
-//     }
 
-//     try {
-//       const customers = await Customer.find({}).limit(22);
-//       res.render('index', { locals, messages, customers } );
-//     } catch (error) {
-//       console.log(error);
-//     }
-// }
-
-/**
- * GET /
- * About
- */
 exports.about = async (req, res) => {
   const locals = {
     title: "About",
-    description: "Free NodeJs User Management System",
+    description: "Employee Management System",
   };
 
   try {
@@ -71,10 +43,6 @@ exports.about = async (req, res) => {
   }
 };
 
-/**
- * GET /
- * New Customer Form
- */
 exports.addCustomer = async (req, res) => {
   const locals = {
     title: "SyncEmployee",
@@ -84,10 +52,6 @@ exports.addCustomer = async (req, res) => {
   res.render("customer/add", locals);
 };
 
-/**
- * POST /
- * Create New Customer
- */
 exports.postCustomer = async (req, res) => {
   console.log(req.body);
 
@@ -101,7 +65,7 @@ exports.postCustomer = async (req, res) => {
 
   try {
     await Customer.create(newCustomer);
-    await req.flash("info", "New customer has been added.");
+    await req.flash("INFO!", "New customer has been added.");
 
     res.redirect("/");
   } catch (error) {
@@ -109,17 +73,13 @@ exports.postCustomer = async (req, res) => {
   }
 };
 
-/**
- * GET /
- * Customer Data
- */
 exports.view = async (req, res) => {
   try {
     const customer = await Customer.findOne({ _id: req.params.id });
 
     const locals = {
-      title: "View Customer Data",
-      description: "Free NodeJs User Management System",
+      title: "View Employee Data",
+      description: "Employee Management System",
     };
 
     res.render("customer/view", {
@@ -131,17 +91,13 @@ exports.view = async (req, res) => {
   }
 };
 
-/**
- * GET /
- * Edit Customer Data
- */
 exports.edit = async (req, res) => {
   try {
     const customer = await Customer.findOne({ _id: req.params.id });
 
     const locals = {
-      title: "Edit Customer Data",
-      description: "Free NodeJs User Management System",
+      title: "Edit Employee Data",
+      description: "Employee Management System",
     };
 
     res.render("customer/edit", {
@@ -153,10 +109,6 @@ exports.edit = async (req, res) => {
   }
 };
 
-/**
- * GET /
- * Update Customer Data
- */
 exports.editPost = async (req, res) => {
   try {
     await Customer.findByIdAndUpdate(req.params.id, {
@@ -175,10 +127,6 @@ exports.editPost = async (req, res) => {
   }
 };
 
-/**
- * Delete /
- * Delete Customer Data
- */
 exports.deleteCustomer = async (req, res) => {
   try {
     await Customer.deleteOne({ _id: req.params.id });
@@ -188,14 +136,10 @@ exports.deleteCustomer = async (req, res) => {
   }
 };
 
-/**
- * Get /
- * Search Customer Data
- */
 exports.searchCustomers = async (req, res) => {
   const locals = {
-    title: "Search Customer Data",
-    description: "Free NodeJs User Management System",
+    title: "Search Employee Data",
+    description: "Employee Management System",
   };
 
   try {
